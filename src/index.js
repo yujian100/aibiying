@@ -17,6 +17,5 @@ root.render(
                 <App />
             </Suspense>
         </Provider>
-
     </BrowserRouter>
 );

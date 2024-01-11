@@ -9,7 +9,16 @@ module.exports = {
                 '@':resolve('src'),
                 'componset':resolve('src/componset'),
                 'view':resolve('src/view'),
-                
+                'asset':resolve('src/asset'),
+                'service':resolve('src/service'),
+                '@mui/styled-engine': '@mui/styled-engine-sc'
+            },
+            resolve:{
+                alias:{
+                    '@mui/styled-engine': '@mui/styled-engine-sc'
+                }
             }
+            
     },
+    
   };
