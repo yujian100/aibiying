@@ -1,7 +1,7 @@
 import React, { memo, useEffect, useState } from 'react'
 import { BannerWerapper } from './c-com/HomeBanner/style'
 import { HomeWrapper } from './style'
-import { useDispatch, useSelector } from 'react-redux'
+import { shallowEqual, useDispatch, useSelector } from 'react-redux'
 import { GoodPriceGet } from '@/store/module/home'
 import SectionHomeV1 from './c-com/SectionHomeV1'
 import { isEmptyO } from '@/ulits/isEmptyO'
@@ -15,14 +15,12 @@ const Home = memo(() => {
     dispatch(GoodPriceGet())
   },[])
   //获取store的数据
-  const {GoodPriceList,HighScoreDate,DisCountDate,HotRecommendDestDate,LongForDate,PlusDate} = useSelector(state=>state.homeStore)
+  const {GoodPriceList,HighScoreDate,DisCountDate,HotRecommendDestDate,LongForDate,PlusDate} = useSelector(state=>state.homeStore,shallowEqual)
 
   return (
     <HomeWrapper>
          <BannerWerapper/>
          <div className='content'>
-
-
             {isEmptyO(GoodPriceList) && <SectionHomeV1 datelist={GoodPriceList}/>}
             {isEmptyO(HighScoreDate) &&  <SectionHomeV1 datelist={HighScoreDate}/>}
             {isEmptyO(DisCountDate.dest_list) && <SectionHomeV2 infoData={DisCountDate} />}

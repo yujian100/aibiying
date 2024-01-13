@@ -6,6 +6,10 @@ class HYrequest{
             baseURL:baseUrl,
             timeout:TimeOut,
             
+        })  
+        this.instance.interceptors.request.use((res)=>{
+            console.log(res)
+            return res
         })
         this.instance.interceptors.response.use((res)=>{
             return res.data

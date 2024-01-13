@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const FooterWarpper = styled.div`
-
+    margin-top: 20px;
     border-top:1px solid var(--bordercolor);
     color: #666;
     .Footbox{

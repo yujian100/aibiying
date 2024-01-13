@@ -2,6 +2,7 @@ import Detail from '@/view/Detail'
 import Home from '@/view/Home'
 import More from '@/view/More'
 import {Navigate} from 'react-router-dom'
+import Dom from '@/view/Dom'
 
 const routes = [
 
@@ -20,6 +21,10 @@ const routes = [
     {
         path:'/more',
         element:<More></More>
+    },
+    {
+        path:'/dom',
+        element:<Dom></Dom>
     }
 
 ]
